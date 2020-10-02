@@ -1,0 +1,51 @@
+.d17 {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: repeating-linear-gradient(45deg, white 0px, white 20px, black 20px, black 24px);
+
+    &__box {
+        width: 270px;
+        height: 270px;
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 10px 15px 20px 5px rgba(143, 143, 143, 0.5);
+
+        .d17__svg {
+            width: 160px;
+            height: 140px;
+
+            .d17__p1 {
+                fill: rgb(223, 223, 223);
+                transition: fill 1s;
+            }
+            .d17__p2 {
+                fill: rgb(168, 167, 167);
+                transition: fill 1s;
+            }
+            .d17__p3 {
+                fill: white;
+                transition: fill 1s;
+            }
+
+            &:hover {
+                .d17__p1 {
+                    fill: white;
+                    transition: fill 1s;
+                }
+                .d17__p2 {
+                    fill: rgb(223, 223, 223);
+                    transition: fill 1s;
+                }
+                .d17__p3 {
+                    fill: rgb(168, 167, 167);
+                    transition: fill 1s;
+                }
+            }
+        }
+    }
+}

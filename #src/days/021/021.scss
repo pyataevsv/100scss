@@ -1,0 +1,99 @@
+.d21 {
+    height: 100%;
+    background-color: #333;
+    position: relative;
+    overflow: hidden;
+
+    &__body {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background-color: #dcc000;
+    }
+    &__eye {
+        position: absolute;
+        // top: calc(50% - 50px);
+        // left: calc(50% + 10px);
+        width: 15px;
+        height: 15px;
+        background-color: #333;
+        border-radius: 50%;
+        z-index: 3;
+        animation: eye 1000ms ease-in-out 0ms infinite;
+
+        @keyframes eye {
+            0% {
+                top: calc(50% - 40px);
+                left: calc(50% + 20px);
+            }
+            50% {
+                top: calc(50% - 55px);
+                left: calc(50% + 0px);
+            }
+            100% {
+                top: calc(50% - 40px);
+                left: calc(50% + 20px);
+            }
+        }
+    }
+    &__mouth {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%) scaleY(10);
+        //background-color: #333;
+        width: 0px;
+        height: 0px;
+        z-index: 2;
+        border-right: 150px solid #333;
+        border-top: 40px solid transparent;
+        border-bottom: 40px solid transparent;
+        animation: body 1000ms ease-in-out 0ms infinite;
+
+        @keyframes body {
+            0% {
+                transform: translateY(-50%) scaleY(0);
+            }
+            50% {
+                transform: translateY(-50%) scaleY(5);
+            }
+            100% {
+                transform: translateY(-50%) scaleY(0);
+            }
+        }
+    }
+
+    @each $num in 1, 2, 3, 4, 5 {
+        .d21__dot#{$num} {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 110%;
+            width: 16px;
+            height: 16px;
+            background-color: #dcc000;
+            border-radius: 50%;
+            z-index: 4;
+            animation: dot1 3000ms linear $num * 1000ms +150ms infinite;
+            @keyframes dot1 {
+                0% {
+                    background-color: #dcc000;
+                    left: 110%;
+                }
+                100% {
+                    background-color: #dcc000;
+                    left: 45%;
+                }
+                // 100% {
+                //     left: 50%;
+                //     background-color: #dcc000;
+                // }
+            }
+        }
+    }
+}

@@ -1,0 +1,149 @@
+$speed: 3000ms;
+
+.four {
+    background-color: #dd3c54;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .four__countainer {
+        width: 300px;
+        height: 150px;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .four__bell {
+            position: absolute;
+            fill: white;
+            left: 130px;
+            transform: rotate(0deg);
+            transform-origin: top;
+            animation: bell $speed linear 400ms infinite;
+
+            @keyframes bell {
+                0% {
+                    transform: rotate(15deg);
+                }
+                5% {
+                    transform: rotate(-15deg);
+                }
+                10% {
+                    transform: rotate(15deg);
+                }
+                15% {
+                    transform: rotate(-15deg);
+                }
+                20% {
+                    transform: rotate(15deg);
+                }
+                25% {
+                    transform: rotate(-15deg);
+                }
+                30% {
+                    transform: rotate(+15deg);
+                }
+                35% {
+                    transform: rotate(-15deg);
+                }
+                40% {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+        .four__cir-a {
+            position: absolute;
+            stroke-width: 2;
+            fill: none;
+            left: 180px;
+            stroke: transparent;
+            height: 60px;
+            width: 14px;
+            transform: scale(1);
+            animation: line1 $speed linear 400ms infinite;
+        }
+
+        .four__cir-b {
+            position: absolute;
+            stroke-width: 2;
+            fill: none;
+            left: 180px;
+            stroke: transparent;
+            height: 60px;
+            width: 14px;
+            transform: scale(1);
+            animation: line1 $speed linear 800ms infinite;
+        }
+        .four__cir-c {
+            position: absolute;
+            stroke-width: 2;
+            fill: none;
+            left: 180px;
+            stroke: transparent;
+            height: 60px;
+            width: 14px;
+            transform: scale(1);
+            animation: line1 $speed linear 0ms infinite;
+        }
+
+        .four__cir-d {
+            position: absolute;
+            stroke-width: 2;
+            fill: none;
+            left: 106px;
+            stroke: transparent;
+            height: 60px;
+            width: 14px;
+            animation: line2 $speed linear 0ms infinite;
+        }
+
+        .four__cir-e {
+            position: absolute;
+            stroke-width: 2;
+            fill: none;
+            left: 106px;
+            stroke: transparent;
+            height: 60px;
+            width: 14px;
+            animation: line2 $speed linear 400ms infinite;
+        }
+        .four__cir-f {
+            position: absolute;
+            stroke-width: 2;
+            fill: none;
+            left: 106px;
+            stroke: transparent;
+            height: 60px;
+            width: 14px;
+            animation: line2 $speed linear 800ms infinite;
+        }
+
+        @keyframes line1 {
+            0% {
+                stroke: white;
+                transform: scale(1);
+                left: 180px;
+            }
+            50% {
+                stroke: transparent;
+                transform: scale(2);
+                left: 270px;
+            }
+        }
+
+        @keyframes line2 {
+            0% {
+                stroke: white;
+                transform: scale(1);
+                left: 106px;
+            }
+            50% {
+                stroke: transparent;
+                transform: scale(2);
+                left: 10px;
+            }
+        }
+    }
+}

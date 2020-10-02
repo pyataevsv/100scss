@@ -1,0 +1,99 @@
+.d32 {
+    height: 100%;
+    background-image: linear-gradient(90deg, rgb(224, 99, 41), rgb(243, 158, 60));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__counter {
+        background-color: white;
+        padding: 5px 5px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        box-shadow: 5px 5px 10px 2px rgb(197, 129, 1);
+
+        .d32__inc {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+            .d32__ivert {
+                position: absolute;
+                width: 2px;
+                background-color: rgb(89, 184, 11);
+                height: 70%;
+            }
+            .d32__ihoriz {
+                position: absolute;
+                width: 70%;
+                height: 2px;
+                background-color: rgb(89, 184, 11);
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: black;
+                background-color: rgb(89, 184, 11);
+
+                .d32__ivert {
+                    background-color: white;
+                }
+                .d32__ihoriz {
+                    background-color: white;
+                }
+            }
+        }
+
+        .d32__countnum {
+            font-size: 20px;
+            color: grey;
+            width: 70px;
+            text-align: center;
+
+            &::selection {
+                background-color: transparent;
+            }
+        }
+        .d32__countnum__transition {
+            transition: all 200ms ease-in;
+        }
+        .d32__countnum__fade-out {
+            transform: scale(2);
+            opacity: 0;
+        }
+        .d32__countnum__fade-in {
+            transform: scale(0.1);
+            opacity: 0;
+        }
+
+        .d32__dec {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .d32__dhoriz {
+                width: 70%;
+                height: 2px;
+                background-color: rgb(209, 68, 32);
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: black;
+                background-color: rgb(209, 68, 32);
+
+                .d32__dhoriz {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}

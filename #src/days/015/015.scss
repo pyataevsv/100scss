@@ -1,0 +1,142 @@
+.d15 {
+    height: 100%;
+    background-image: linear-gradient(45deg, rgb(242, 255, 126), rgb(88, 255, 110));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__card {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px 2px rgba(128, 128, 128, 0.479);
+        width: 300px;
+        text-align: center;
+
+        .d15__loader {
+            height: 3px;
+            width: 0%;
+            background-color: rgb(104, 104, 255);
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            transition: width 3s;
+        }
+
+        .d15__head {
+            padding: 15px;
+            border-bottom: 1px solid rgb(220, 220, 220);
+            font-weight: 100;
+            color: rgb(94, 94, 94);
+            position: relative;
+        }
+        .d15__main {
+            padding: 20px;
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            label {
+                display: block;
+                width: 100px;
+                height: 70px;
+                line-height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px dashed rgb(172, 172, 172);
+                margin: 20px 0px;
+
+                .d15__filename {
+                    display: none;
+                }
+
+                .d15__syncing {
+                    display: none;
+                }
+                .d15__check {
+                    display: none;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .d15__upload-img {
+                    display: block;
+                }
+
+                &.d15__label--getfile {
+                    .d15__upload-img {
+                        display: none;
+                    }
+                    .d15__filename {
+                        display: block;
+                    }
+                }
+            }
+
+            input[type="file"] {
+                display: none;
+            }
+            input[type="submit"] {
+                margin-top: 10px;
+                display: block;
+                color: white;
+                font-weight: 100;
+                letter-spacing: 1px;
+                border-radius: 3px;
+                padding: 10px 30px;
+                border: none;
+                outline-style: none;
+                background-color: rgb(95, 168, 250);
+
+                &:hover {
+                    box-shadow: 2px 2px 15px 5px rgba(95, 167, 250, 0.281);
+                    cursor: pointer;
+                }
+                &:active {
+                    box-shadow: 2px 2px 15px 5px rgba(95, 167, 250, 0.281);
+                    background-color: rgb(74, 129, 190);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &--loading {
+            .d15__loader {
+                width: 100%;
+            }
+
+            .d15__main {
+                label {
+                    .d15__filename {
+                        display: none;
+                    }
+                    .d15__upload-img {
+                        display: none;
+                    }
+                    .d15__syncing {
+                        display: block;
+                        animation: a 2s linear 0ms infinite;
+                        @keyframes a {
+                            form {
+                                transform: rotate(0deg);
+                            }
+                            to {
+                                transform: rotate(360deg);
+                            }
+                        }
+                    }
+
+                    &.d15__label--getfile {
+                        .d15__upload-img {
+                            display: none;
+                        }
+                        .d15__filename {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

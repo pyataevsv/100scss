@@ -1,0 +1,221 @@
+$gap: 4px;
+
+.d13 {
+    height: 100%;
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__card {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+
+        .d13__galery {
+            width: calc(100% - 8px);
+            height: calc(100% - 8px);
+            background-color: rgb(175, 175, 175);
+            display: grid;
+            padding: $gap;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto;
+            column-gap: 4px;
+            row-gap: 4px;
+
+            .d13__image__overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                backdrop-filter: brightness(100%);
+                transition: all 500ms;
+
+                .d13__open-btn {
+                    width: 50px;
+                    height: 50px;
+                    background-color: rgb(245, 105, 105);
+                    border-radius: 50%;
+                    opacity: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    transition: all 500ms;
+                    transform: scale(2);
+                    .d13__hor {
+                        position: absolute;
+                        width: 16px;
+                        height: 2px;
+                        background-color: white;
+                    }
+                    .d13__ver {
+                        position: absolute;
+                        width: 2px;
+                        height: 16px;
+                        background-color: white;
+                    }
+                }
+                &:hover {
+                    backdrop-filter: brightness(50%);
+                    .d13__open-btn {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+            }
+
+            .d13__image1 {
+                position: relative;
+                background-image: url("../img/13-1.jpg");
+            }
+            .d13__image2 {
+                position: relative;
+                background-image: url("../img/13-2.jpg");
+            }
+            .d13__image3 {
+                position: relative;
+                background-image: url("../img/13-3.jpg");
+            }
+            .d13__image4 {
+                position: relative;
+                background-image: url("../img/13-4.jpg");
+            }
+        }
+        .d13__card-over-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 45%;
+            background-image: url("../img/13-1-header.jpg");
+            z-index: 1;
+            transition: all 1s ease-in-out;
+        }
+        .d13__card-over-bot {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 55%;
+            background-color: rgb(245, 105, 105);
+            z-index: 1;
+            text-align: center;
+            transition: all 1s ease-in-out;
+
+            h3 {
+                padding-top: 50px;
+                color: white;
+                font-weight: 400;
+            }
+            .d13__btn-box {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                padding: 20px 50px;
+                box-sizing: border-box;
+            }
+            .d13__bot-btn {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 1px solid white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2);
+                    cursor: pointer;
+                    background-color: white;
+                    .d13__pip {
+                        border: 2px solid rgb(245, 105, 105);
+                    }
+                }
+
+                .d13__pip {
+                    border: 2px solid white;
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+        .d13__avatar {
+            position: absolute;
+            z-index: 2;
+            top: 32%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2);
+            transform: translateX(-50%);
+            background-image: url("../img/13-1.jpg");
+            background-size: cover;
+            border-radius: 50%;
+            border: 2px solid white;
+            transition: all 1s ease-in-out;
+        }
+        .d13__close-btn {
+            z-index: 3;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(245, 105, 105);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateZ(45deg);
+            transition: all 500ms;
+            cursor: pointer;
+            transition: all 1s ease-in-out;
+
+            &:hover {
+                background-color: white;
+                .d13__hor {
+                    background-color: rgb(245, 105, 105);
+                }
+                .d13__ver {
+                    background-color: rgb(245, 105, 105);
+                }
+            }
+
+            .d13__hor {
+                position: absolute;
+                width: 16px;
+                height: 2px;
+                background-color: white;
+            }
+            .d13__ver {
+                position: absolute;
+                width: 2px;
+                height: 16px;
+                background-color: white;
+            }
+        }
+
+        &--opened {
+            .d13__card-over-top {
+                top: -45%;
+            }
+            .d13__card-over-bot {
+                bottom: -55%;
+            }
+
+            .d13__avatar {
+                top: -110px;
+            }
+            .d13__close-btn {
+                top: -50px;
+            }
+        }
+    }
+}

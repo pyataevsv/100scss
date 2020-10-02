@@ -1,0 +1,83 @@
+.two {
+    background-color: #c7d6e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    &__card {
+        position: relative;
+        overflow: hidden;
+        background-color: #fff;
+        border-radius: 5px;
+        text-align: center;
+        width: 70%;
+        box-sizing: border-box;
+        box-shadow: 5px 5px 14px 1px #bdbdbd;
+
+        .two__corner {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: rgb(144, 144, 151);
+            right: -45px;
+            top: -45px;
+            transform: rotate(45deg);
+        }
+        .two__number {
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            right: 7px;
+            top: 7px;
+        }
+        .two__content {
+            padding: 20px 20px;
+            h3 {
+                font-size: 16px;
+                font-weight: normal;
+                color: #616e7d;
+            }
+            p {
+                font-size: 14px;
+                font-weight: lighter;
+                color: #8391a1;
+            }
+        }
+
+        .two__button {
+            border: none;
+            width: 100%;
+            padding: 15px;
+            color: white;
+            background-color: #3ca7fb;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            outline: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+            &:active {
+                background-color: #2e88cc;
+            }
+            &:focus {
+            }
+        }
+    }
+
+    &__card__fade-out {
+        opacity: 0;
+        transform: scale(1.1);
+        // transition: all 1s;
+    }
+    &__card__fade-in {
+        opacity: 0;
+        transform: scale(0.8);
+        // transition: all 1s;
+    }
+
+    &__card__transition {
+        transition: all 1s;
+    }
+}

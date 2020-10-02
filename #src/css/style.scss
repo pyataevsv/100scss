@@ -1,0 +1,39 @@
+@import "some";
+@import "../days/one/one.scss";
+@import "../days/two/two.scss";
+@import "../days/four/four.scss";
+@import "../days/three/three.scss";
+@import "../days/029/029.scss";
+@import "../days/030/030.scss";
+@import "../days/031/031.scss";
+@import "../days/032/032.scss";
+@import "../days/033/033.scss";
+@import "../days/025/025.scss";
+@import "../days/024/024.scss";
+@import "../days/022/022.scss";
+@import "../days/021/021.scss";
+@import "../days/020/020.scss";
+@import "../days/019/019.scss";
+@import "../days/018/018.scss";
+@import "../days/017/017.scss";
+@import "../days/016/016.scss";
+@import "../days/015/015.scss";
+@import "../days/014/014.scss";
+@import "../days/013/013.scss";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    flex: 1;
+    min-width: 400px;
+    height: 400px;
+}

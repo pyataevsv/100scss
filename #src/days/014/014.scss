@@ -1,0 +1,229 @@
+.d14 {
+    height: 100%;
+    background-color: #4b4841;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .d14__outer {
+        width: 300px;
+        height: 200px;
+        perspective: 600px;
+
+        .d14__card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all 800ms ease-in-out;
+            box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.5);
+
+            .d14__top {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #ffce4e;
+                backface-visibility: hidden;
+                border-radius: 3px;
+                overflow: hidden;
+                text-align: center;
+                z-index: 2;
+                transform: rotateX(0);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .d14__img-space {
+                    padding: 20px;
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 2;
+                    img {
+                        position: relative;
+                        z-index: 2;
+                        animation: d14h 2s ease-in-out infinite;
+                        @keyframes d14h {
+                            0% {
+                                top: -10px;
+                            }
+                            50% {
+                                top: 10px;
+                            }
+                            100% {
+                                top: -10px;
+                            }
+                        }
+                    }
+                    .d14_g-line {
+                        position: absolute;
+                        z-index: 1;
+                        background-color: #4b4841;
+                        height: 3px;
+                        width: 10px;
+
+                        animation-timing-function: linear;
+                        animation-name: d14sky;
+                        animation-iteration-count: infinite;
+
+                        animation-duration: 1s;
+                        //animation: d14sky 1s linear;
+                        @keyframes d14sky {
+                            from {
+                                right: -10%;
+                            }
+                            to {
+                                right: 110%;
+                            }
+                        }
+                    }
+                    .d14_g-line {
+                        &--a1 {
+                            bottom: 20px;
+                            animation-delay: 100ms;
+                        }
+                    }
+                    .d14_g-line {
+                        &--a2 {
+                            bottom: 40px;
+                            animation-delay: 300ms;
+                        }
+                    }
+                    .d14_g-line {
+                        &--a3 {
+                            bottom: 50px;
+                            animation-delay: 600ms;
+                        }
+                    }
+                    .d14_g-line {
+                        &--a4 {
+                            bottom: 60px;
+                            animation-delay: 100ms;
+                        }
+                    }
+                    .d14_g-line {
+                        &--a5 {
+                            bottom: 70px;
+                            animation-delay: 800ms;
+                        }
+                    }
+                    .d14_g-line {
+                        &--a8 {
+                            bottom: 80px;
+                            animation-delay: 300ms;
+                        }
+                    }
+                    .d14_g-line {
+                        &--a9 {
+                            bottom: 90px;
+                            animation-delay: 500ms;
+                        }
+                    }
+                }
+            }
+            .d14__bot {
+                background-color: red;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #ffce4e;
+                backface-visibility: hidden;
+                border-radius: 3px;
+                overflow: hidden;
+                text-align: center;
+                z-index: 1;
+                transform: rotateX(180deg);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .d14__img-space {
+                    padding: 20px;
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 2;
+
+                    img {
+                        position: relative;
+                        z-index: 2;
+                        animation: d14h 1s ease-in-out infinite;
+                        @keyframes d14h {
+                            0% {
+                                transform: scaleY(1);
+                                transform-origin: bottom;
+                            }
+                            50% {
+                                transform: scaleY(1.05);
+                                transform-origin: bottom;
+                            }
+                            100% {
+                                transform: scaleY(1);
+                                transform-origin: bottom;
+                            }
+                        }
+                    }
+
+                    .d14_s-line {
+                        position: absolute;
+                        z-index: 1;
+                        background-color: #4b4841;
+                        height: 3px;
+                        width: 10px;
+                        right: 0px;
+                        bottom: 20px;
+                        animation-timing-function: linear;
+                        animation-name: d14ground;
+                        animation-iteration-count: infinite;
+
+                        animation-duration: 1s;
+                        //animation: d14sky 1s linear;
+                        @keyframes d14ground {
+                            from {
+                                right: -10%;
+                            }
+                            to {
+                                right: 110%;
+                            }
+                        }
+                    }
+
+                    .d14_s-line {
+                        &--a1 {
+                            animation-delay: 500ms;
+                        }
+                    }
+                    .d14_s-line {
+                        &--a2 {
+                            animation-delay: 100ms;
+                        }
+                    }
+                    .d14_s-line {
+                        &--a3 {
+                            animation-delay: 540ms;
+                        }
+                    }
+                    .d14_s-line {
+                        &--a4 {
+                            animation-delay: 270ms;
+                        }
+                    }
+                    .d14_s-line {
+                        &--a5 {
+                            animation-delay: 800ms;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .d14__card {
+                transform: rotateX(180deg);
+                box-shadow: 8px -10px 15px 0 rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}

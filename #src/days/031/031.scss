@@ -1,0 +1,43 @@
+$numberOfDots: 20;
+$duration: 60;
+$oscillations: 20;
+
+.d31 {
+    height: 100%;
+    background-color: rgb(97, 51, 170);
+    display: flex;
+    justify-content: center;
+    &__box {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .d31__dot {
+            width: 12px;
+            height: 12px;
+            background-color: white;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        @for $n from 1 through $numberOfDots {
+            $time: $duration / ($oscillations + $numberOfDots - $n);
+
+            .d31__dot__a#{$n} {
+                animation: dot $time * 1000ms ease-in-out infinite;
+            }
+        }
+        @keyframes dot {
+            0% {
+                left: 0px;
+            }
+            50% {
+                left: 190px;
+            }
+            100% {
+                left: 0px;
+            }
+        }
+    }
+}

@@ -1,0 +1,335 @@
+$speed: 5s;
+
+.d16 {
+    height: 100%;
+    position: relative;
+    background-color: #0099ff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+
+    &__cir {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        fill: white;
+        transform: translate(-50%, -50%) scale(0);
+        animation: d16cir $speed linear 0s infinite forwards;
+        @keyframes d16cir {
+            0% {
+                top: -20%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            1% {
+                top: -20%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            6% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            7% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, 0%) scaleY(0.7);
+            }
+            11% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -100%) scaleY(1);
+            }
+
+            14% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            18% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            22% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+            27% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+            }
+
+            72% {
+                transform: translate(-50%, -50%) scale(0);
+            }
+            76% {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+            79% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            86% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            91% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            94% {
+                transform: translate(-50%, -100%) scaleY(0.9);
+                top: 50%;
+                left: 50%;
+            }
+            98% {
+                transform: translate(-50%, -100%) scale(1);
+                top: 120%;
+                left: 50%;
+                opacity: 1;
+            }
+
+            99% {
+                top: 150%;
+                left: 150%;
+                transform: scale(0);
+            }
+        }
+    }
+    &__tri {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        z-index: 1;
+        transform: scale(0);
+        animation: d16tri $speed linear 0s infinite forwards;
+        @keyframes d16tri {
+            26% {
+                transform: scale(0);
+            }
+            30% {
+                transform: scale(1.2);
+            }
+            33% {
+                transform: scale(1);
+            }
+            40% {
+                transform: scale(1);
+            }
+            43% {
+                transform: scale(1.2);
+            }
+            47% {
+                transform: scale(0);
+            }
+        }
+
+        path {
+            fill: white;
+        }
+    }
+    &__poly {
+        width: 100px;
+        height: 100px;
+        transform: scale(0);
+        position: absolute;
+        animation: d16poly $speed linear 0s infinite forwards;
+        @keyframes d16poly {
+            48% {
+                transform: scale(0);
+            }
+            52% {
+                transform: scale(1.2);
+            }
+            55% {
+                transform: scale(1);
+            }
+            62% {
+                transform: scale(1);
+            }
+            65% {
+                transform: scale(1.2);
+            }
+            69% {
+                transform: scale(0);
+            }
+        }
+        polygon {
+            fill: white;
+        }
+    }
+    &__linex-box {
+        stroke-linecap: round;
+        z-index: 4;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        stroke-width: 5;
+        stroke: white;
+
+        .d16__line12 {
+            stroke-dasharray: 20 500;
+            stroke-dashoffset: 0;
+            opacity: 0;
+            animation: d16triline $speed linear 0ms infinite forwards;
+        }
+        .d16__line163 {
+            stroke-dasharray: 20 500;
+            stroke-dashoffset: 0;
+            opacity: 0;
+            animation: d16triline $speed linear 0ms infinite forwards;
+        }
+        .d16__line193 {
+            stroke-dasharray: 20 500;
+            stroke-dashoffset: 0;
+            opacity: 0;
+            animation: d16triline $speed linear 0ms infinite forwards;
+        }
+
+        @keyframes d16triline {
+            0% {
+                stroke-dasharray: 0 500;
+                stroke-dashoffset: 0;
+                opacity: 0;
+            }
+            23% {
+                stroke-dasharray: 0 500;
+                stroke-dashoffset: 0;
+                opacity: 0;
+            }
+
+            28% {
+                stroke-dasharray: 0 500;
+                stroke-dashoffset: 0;
+                opacity: 1;
+            }
+            34% {
+                stroke-dasharray: 50 500;
+                stroke-dashoffset: -150;
+                opacity: 1;
+            }
+            38% {
+                stroke-dasharray: 30 500;
+                stroke-dashoffset: -150;
+                opacity: 0;
+            }
+
+            // 0% {
+            //     stroke-dasharray: 0 500;
+            //     stroke-dashoffset: 0;
+            //     opacity: 0;
+            // }
+            50% {
+                stroke-dasharray: 0 500;
+                stroke-dashoffset: 0;
+                opacity: 0;
+            }
+
+            53% {
+                stroke-dasharray: 0 500;
+                stroke-dashoffset: 0;
+                opacity: 1;
+            }
+            61% {
+                stroke-dasharray: 50 500;
+                stroke-dashoffset: -150;
+                opacity: 1;
+            }
+            65% {
+                stroke-dasharray: 30 500;
+                stroke-dashoffset: -150;
+                opacity: 0;
+            }
+        }
+
+        .d16__line133 {
+            stroke-dasharray: 20 500;
+            stroke-dashoffset: 0;
+            opacity: 0;
+            animation: d16polyline $speed linear 0ms infinite forwards;
+        }
+        .d16__line15 {
+            stroke-dasharray: 20 500;
+            stroke-dashoffset: 0;
+            opacity: 0;
+            animation: d16polyline $speed linear 0ms infinite forwards;
+        }
+        .d16__line18 {
+            stroke-dasharray: 20 500;
+            stroke-dashoffset: 0;
+            opacity: 0;
+            animation: d16polyline $speed linear 0ms infinite forwards;
+        }
+        .d16__line21 {
+            stroke-dasharray: 20 500;
+            stroke-dashoffset: 0;
+            opacity: 0;
+            animation: d16polyline $speed linear 0ms infinite forwards;
+        }
+        .d16__line223 {
+            stroke-dasharray: 20 500;
+            stroke-dashoffset: 0;
+            opacity: 0;
+            animation: d16polyline $speed linear 0ms infinite forwards;
+        }
+
+        @keyframes d16polyline {
+            // 0% {
+            //     stroke-dasharray: 0 500;
+            //     stroke-dashoffset: 0;
+            //     opacity: 0;
+            // }
+            50% {
+                stroke-dasharray: 0 500;
+                stroke-dashoffset: 0;
+                opacity: 0;
+            }
+
+            53% {
+                stroke-dasharray: 0 500;
+                stroke-dashoffset: 0;
+                opacity: 1;
+            }
+            61% {
+                stroke-dasharray: 50 500;
+                stroke-dashoffset: -150;
+                opacity: 1;
+            }
+            65% {
+                stroke-dasharray: 30 500;
+                stroke-dashoffset: -150;
+                opacity: 0;
+            }
+        }
+    }
+
+    &__outer-cir {
+        stroke-linecap: round;
+        position: absolute;
+        transform: translate(-50%, -50%) scale(0);
+        top: 50%;
+        left: 50%;
+        fill: none;
+        z-index: 4;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        stroke-width: 5;
+        stroke: white;
+        opacity: 0;
+        animation: d16outer-cir $speed linear 0ms infinite forwards;
+    }
+
+    @keyframes d16outer-cir {
+        75% {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 1;
+        }
+        85% {
+            transform: translate(-50%, -50%) scale(4);
+            opacity: 0;
+        }
+    }
+}

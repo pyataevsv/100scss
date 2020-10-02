@@ -1,0 +1,103 @@
+.d33 {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 94, 182);
+    overflow: hidden;
+    animation: sky 100s linear infinite;
+    @keyframes sky {
+        0% {
+            background-color: rgb(0, 94, 182);
+        }
+        50% {
+            background-color: rgb(97, 184, 255);
+        }
+    }
+
+    .d33-sun {
+        width: 100%;
+
+        svg {
+            width: 100%;
+            fill: rgb(255, 208, 0);
+            position: relative;
+            top: 50px;
+            animation: sun 100s linear infinite;
+            z-index: 0;
+            transform: translateX(10%);
+
+            @keyframes sun {
+                to {
+                    transform: translateX(-20%);
+                }
+
+                from {
+                    transform: translateX(100%);
+                }
+            }
+        }
+    }
+
+    .d33-cloud1 {
+        position: absolute;
+        z-index: 1;
+        animation: cloud1 40s linear 0ms infinite;
+        @keyframes cloud1 {
+            0% {
+                left: -200px;
+            }
+
+            100% {
+                left: 120%;
+            }
+        }
+    }
+    .d33-cloud2 {
+        position: absolute;
+        top: 100px;
+        z-index: 1;
+        transform: scale(0.7);
+        animation: cloud2 50s linear 0ms infinite;
+        @keyframes cloud2 {
+            0% {
+                left: -200px;
+            }
+
+            100% {
+                left: 120%;
+            }
+        }
+    }
+    .d33-cloud3 {
+        position: absolute;
+        top: 50px;
+        z-index: 4;
+        transform: scale(0.4);
+        animation: cloud3 30s linear 0ms infinite;
+        @keyframes cloud3 {
+            100% {
+                left: -200px;
+            }
+
+            0% {
+                left: 120%;
+            }
+        }
+    }
+    .d33-cloud4 {
+        position: absolute;
+        top: 100px;
+        z-index: 4;
+        transform: scale(0.5);
+        animation: cloud4 20s linear 0ms infinite;
+        @keyframes cloud4 {
+            100% {
+                left: -200px;
+            }
+
+            0% {
+                left: 120%;
+            }
+        }
+    }
+}

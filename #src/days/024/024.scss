@@ -1,0 +1,127 @@
+.d24 {
+    height: 100%;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .d24__outer {
+        position: absolute;
+        z-index: 1;
+        .d24__button {
+            border-radius: 30px;
+            background-color: lightblue;
+            height: 50px;
+            font-size: 20px;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid white;
+
+            &__transitioned {
+                transition: width 1s, border-color 1s;
+            }
+
+            .d24__check-img {
+                opacity: 0;
+                z-index: 3;
+            }
+
+            .d24__finish {
+                font-family: "Open Sans", Helvetica, sans-serif;
+                color: white;
+                letter-spacing: 0.5rem;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            &__min {
+                .d24__finish {
+                    display: none;
+                }
+                width: 50px;
+                border-color: rgb(131, 167, 179);
+                animation: backg 2500ms linear 1 forwards;
+
+                @keyframes backg {
+                    70% {
+                        background-color: transparent;
+                    }
+                    71% {
+                        background-color: white;
+                    }
+                    100% {
+                        background-color: white;
+                    }
+                }
+                .d24__check-img {
+                    animation: ckeck 2500ms linear 1 forwards;
+
+                    @keyframes ckeck {
+                        70% {
+                            opacity: 0;
+                        }
+                        71% {
+                            opacity: 1;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: rgb(163, 205, 219);
+                cursor: pointer;
+            }
+        }
+    }
+    .d24__circle {
+        position: absolute;
+        z-index: 0;
+        fill: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &__animated {
+            z-index: 2;
+            stroke: white;
+            stroke-width: 3;
+            stroke-dasharray: 50 120;
+            stroke-dashoffset: -120;
+            animation: cir1 1000ms ease-in-out 0ms 1 forwards;
+
+            @keyframes cir1 {
+                0% {
+                    stroke-dasharray: 0 163;
+                    stroke-dashoffset: -120;
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                70% {
+                    stroke-dasharray: 163 0;
+                    stroke-dashoffset: -120;
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                99% {
+                    stroke-dasharray: 163 0;
+                    stroke-dashoffset: -120;
+                    transform: scale(2);
+                    opacity: 0;
+                }
+                100% {
+                    stroke-dasharray: 163 0;
+                    stroke-dashoffset: -120;
+                    transform: scale(0);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

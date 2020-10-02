@@ -1,0 +1,66 @@
+$speed: 4000ms;
+
+.d30 {
+    background-color: #16a085;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    &__circle {
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        animation: planet $speed linear 0ms infinite;
+
+        @keyframes planet {
+            29% {
+                border: 3px solid transparent;
+            }
+            30% {
+                border: 3px solid white;
+                width: 0px;
+                height: 0px;
+            }
+            50% {
+                border: 3px solid transparent;
+                width: 40px;
+                height: 40px;
+            }
+
+            // 60% {
+            //     background-color: transparent;
+            // }
+        }
+    }
+
+    .d30__box {
+        position: absolute;
+        width: 200px;
+        height: 400px;
+        overflow: hidden;
+        .d30__svg {
+            overflow: hidden;
+            .d30__path {
+                stroke: white;
+                stroke-width: 5;
+                fill: none;
+                transform: scale(1);
+                stroke-dashoffset: 0;
+                stroke-dasharray: 60 10000;
+                animation: line $speed linear 0ms infinite;
+            }
+
+            @keyframes line {
+                from {
+                    stroke-dashoffset: 100;
+                }
+                to {
+                    stroke-dashoffset: -1100;
+                }
+            }
+        }
+    }
+}
