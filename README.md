@@ -1,1 +1,1 @@
-(Awsome css here)[https://pyataevsv.github.io/100scss/]
+##Awsome css [here](https://pyataevsv.github.io/100scss/)
