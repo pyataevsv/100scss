@@ -1901,6 +1901,12 @@
 }
 
 .d24 .d24__outer .d24__button .d24__check-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   opacity: 0;
   z-index: 3;
 }
@@ -1911,6 +1917,7 @@
   letter-spacing: 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
+  text-align: center;
 }
 
 .d24 .d24__outer .d24__button__min {
